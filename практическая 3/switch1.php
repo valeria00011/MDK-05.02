@@ -49,7 +49,7 @@ switch($n){
 <form>
     <p>Введите номер месяца: </p>
     <input name="num2">
-    <input type="submit">    
+    <input type="submit2">    
 </form>
 
 <?php
