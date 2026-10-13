@@ -48,14 +48,14 @@ switch($n){
 <h2>Задание 2</h2>
 <form>
     <p>Введите номер месяца: </p>
-    <input name="num2">
+    <input name="numb">
     <input type="submit">    
 </form>
 
 <?php
-if(isset($_GET['num2'])){
-    $a = $_GET['num2'];
-}
+if(isset($_GET['numb'])){
+    $a = $_GET['numb'];
+
 echo "<br>Праздник(и): ";
 switch($a){
     case 1:
@@ -98,19 +98,20 @@ switch($a){
         echo "нет столько месяцев!!!";
 
 }
+}
 ?>
 
 <h2>Задание 3</h2>
 <form>
-    <p>Введите номер месяца: </p>
+    <p>Введите число: </p>
     <input name="number3">
-    <input type="submit3">    
+    <input type="submit">    
 </form>
 
 <?php
 if(isset($_GET['number3'])){
     $b = $_GET['number3'];
-}
+
 echo "<br>Последняя цифра квадрата: ";
 $last = $b % 10;
 switch($last){
@@ -145,19 +146,20 @@ switch($last){
         echo "1";
         break;
 }
+}
 ?>
 
 <h2>Задание 4</h2>
 <form>
     <p>Введите возраст: </p>
     <input name="number4">
-    <input type="submit4">    
+    <input type="submit">    
 </form>
 
 <?php
 if(isset($_GET['number4'])){
     $c = $_GET['number4'];
-    }
+
 $last = $c % 10;
 echo "Мне " . $c;
 switch($last){
@@ -192,6 +194,7 @@ switch($last){
         echo " лет";
         break;
 }
+}
 ?>
 
 <h2>Задание 5</h2>
@@ -200,16 +203,16 @@ switch($last){
     <input name="number5">
     <p>Введите массу: </p>
     <input name="massa5">
-    <input type="submit5">    
+    <input type="submit">    
 </form>
 
 <?php
 if(isset($_GET['number5'])) {
     $d = $_GET['number5'];
-}
+
 if(isset($_GET['massa5'])) {
     $m = $_GET['massa5'];
-}
+
 echo "Масса= ";
 switch($d){
     case 1:
@@ -231,5 +234,7 @@ switch($d){
         $kg = $m / 10;
         echo "$kg килограмм";
         break;
+}
+}
 }
 ?>
