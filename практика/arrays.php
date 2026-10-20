@@ -16,3 +16,20 @@ for($i = 0; $i < count($nums); $i++){
     echo $nums[$i], ' ';
 }
 ?>
+
+<h2>Цикл foreach</h2>
+<?php
+foreach ($nums as $key => $num) {
+    echo "$key - $num <br>  ";
+}
+?>
+
+<h2>Поиск максимума</h2>
+<?php
+$max = $nums[0];
+foreach ($nums as $num){
+    if($num > $max)
+        $max = $num;
+}
+echo "Максимум = $max";
+?>
