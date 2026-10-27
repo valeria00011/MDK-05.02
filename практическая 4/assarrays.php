@@ -133,9 +133,8 @@ foreach ($words as $word){
 foreach($res as $key => $value){
     echo $key . " => ";
 for($i = 0; $i < count($value); $i++){
-    echo $value[$i], ' ';
+    echo $value[$i] . ' ';
 }
 echo "<br>";
 }
-
 ?>
