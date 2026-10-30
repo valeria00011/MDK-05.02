@@ -63,3 +63,88 @@ echo "Индексы минимума $minRow, столбец $minCol<br>";
 echo "Максимальный элемент: $max<br>";
 echo "Индексы максимума $maxRow, столбец $maxCol<br>";
 ?>
+
+<h2>Задание 4</h2>
+<?php
+$n = 5;
+$array = [];
+for($i = 0; $i < $n; $i++){
+    for($j = 0; $j < $n; $j++){
+        $array[$i][$j] = abs($i - $j);
+    }
+}
+for($i = 0; $i < $n; $i++){
+    for($j = 0; $j < $n; $j++){
+        echo $array[$i][$j] . " ";
+    }
+    echo "<br>";
+}
+?>
+
+<h2>Задание 5</h2>
+<?php
+$shop = ["Мячи " => ["Nike " => "Футбольный мяч ", "Adidas " => "Баскетбольный мяч "], "Кроссовки " => ["Nike " => "Air Max ", "Puma " => "RS-X "], "Одежда " => [], "Тренажеры " => ["Domyos " => "Гантели "]];
+foreach($shop as $category => $products){
+    echo "<h3>$category</h3>";
+    if (empty($products)){
+        echo "Здесь пока ничего нет<br>";
+    } else {
+        foreach($products as $manufact => $product){
+            echo "$product, производитель: $manufact";
+        }
+    }
+}
+?>
+
+<h2>Задание 6</h2>
+<?php
+$newCategory = "Ракетки";
+$shop[$newCategory] = [];
+foreach($shop as $category => $products){
+    echo "<h3>$category</h3>";
+    if (empty($products)){
+        echo "Здесь пока нет товаров.<br>";
+    } else {
+        foreach($products as $manufact => $product){
+            echo "$product - производитель: $manufact<br>";
+        }
+    }
+}
+?>
+
+<h2>Задание 7</h2>
+<?php
+$newProducts = ["Wilson " => "Тенисная ракетка ", "Babolat " => "Ракетка для бадминтона "];
+$shop["Ракетки"] = $newProducts;
+foreach($shop as $category => $products){
+        echo "<h3>$category</h3>";
+    if (empty($products)){
+        echo "Здесь пока нет товаров.<br>";
+    } else {
+        foreach($products as $manufact => $product){
+            echo "$product - производитель: $manufact<br>";
+        }
+    }
+}
+?>
+
+<h2>Задание 8</h2>
+<?php
+$category = "Мячи";
+$newProducts = ["Puma" => "Волейбольный мяч", "Molten" => "Баскетбольный мяч"];
+if(isset($shop[$category])){
+    $shop[$category] = $newProducts;
+} else {
+    $shop[$category] = $newProducts;
+}
+foreach($shop as $categoryName => $products){
+    echo "<h3>$categoryName</h3>";
+    if (empty($products)){
+        echo "Здесь пока нет товаров.<br>";
+    } else {
+        foreach($products as $manufact => $product){
+            echo "$product - производитель: $manufact<br>";
+        }
+    }
+}
+?>
