@@ -1,7 +1,14 @@
 <h1>Практическая по строкам</h1>
 <h2>Задание 1</h2>
+<form>
+    <p>Введите строчку: </p>
+    <input name="str1">
+    <input type="submit">    
+</form>
 <?php
-$str1 = "Hello (my word) everyone";
+if(isset($_GET['str1'])){
+        $str1 = $_GET['str1'];
+        function task1($str1){
 $start = 0;
 $end = 0;
 for ($i = 0; $i < strlen($str1); $i++){
@@ -12,10 +19,14 @@ for ($i = 0; $i < strlen($str1); $i++){
         $end = $i;
     }
 }
-echo "Внутри скобок строки '$str1' слова - ";
+$result = "";
 for ($i = $start + 1; $i < $end; $i++){
-    echo $str1[$i];
+    $result .= $str1[$i];
 }
+return $result;
+}
+}
+echo "Внутри скобок строки '$str1' слова - " . task1($str1);
 ?>
 
 <h2>Задание 2</h2>
@@ -101,4 +112,66 @@ if ($result[strlen($result) - 1] == " "){
     $result = $result;
 }
 echo "Исправленный вариант строки '$str6' - '$result'";
+?>
+
+<h2>Задание 7</h2>
+<?php
+$str7 = "Hello my word";
+$min = strlen($str7);
+$max = 0;
+$length = 0;
+for ($i = 0; $i < strlen($str7); $i++){
+    if ($i == strlen($str7) || $str7[$i] == " "){
+        if($length > 0){
+            if($length < $min){
+                $min = $length;
+            }
+            if ($length > $max){
+                $max = $length;
+            }
+        }
+        $length = 0;
+    } else{
+        $length++;
+    }
+}
+echo "Длина самого короткого словa - $min";
+echo "<br>Длина самого длинного слова - $max";
+?>
+
+<h2>Задание 8</h2>
+<?php
+$str8 = "baaaasddaaadaa";
+$count = 0;
+$max = 0;
+for ($i = 0; $i < strlen($str8); $i++){
+    if ($str8[$i] == "a"){
+        $count++;
+        if ($count > $max){
+            $max = $count;
+        }
+    } else{
+        $count = 0;
+    }
+}
+echo "Cамая длинная последовательность подряд идущих букв а в строчке '$str8' - $max";
+?>
+
+<h2>Задание 9</h2>
+<?php
+$str9 = "The world is beautiful (and cute)!";
+$result = "";
+$inside = false;
+for ($i = 0; $i < strlen($str9); $i++){
+    if($str9[$i] =="("){
+        $inside = true;
+    }
+    if($inside == false){
+        $result .= $str9[$i];
+    }
+    if ($str9[$i] == ")"){
+        $inside = false;
+    }
+}
+echo $result;
 ?>
