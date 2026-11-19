@@ -45,5 +45,40 @@ echo "Букв t: " . substr_count($str5, "t") . "<br>";
 
 <h2>Задание 6</h2>
 <?php
+$str6 = "cat programming hello";
+$arr1 = explode(" ", $str6);
+$min = strlen($arr1[0]);
+$max = strlen($arr1[0]);
+foreach($arr as $word){
+    if (strlen($word) < $min){
+        $min = strlen($word);
+    }
+    if (strlen($word) > $max){
+        $max = strlen($word);
+    }
+}
+echo "Самое длинное слово - $max символов" . "<br>";
+echo "Самое длинное слово - $min символов";
+?>
 
+<h2>Задание 7</h2>
+<?php
+$str7 = "aaaaaaaahelloaaaalaa";
+preg_match_all('/a+/u', $str7, $arr2);
+$max = 0;
+foreach ($arr2[0] as $word){
+    if (strlen($word) > $max){
+        $max = strlen($word);
+    }
+}
+echo "Максимальное количество а - $max";
+?>
+
+<h2>Задание 8</h2>
+<?php
+$str8 = "Hello (bebbeb) world";
+$a = strpos($str8, "(");
+$b = strpos($str8, ")");
+$str88 = substr_replace($str8, "", $a, $b - $a +1);
+echo $str88;
 ?>
